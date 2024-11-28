@@ -203,7 +203,7 @@ ul {
   width: 60%;
   line-height: 20px;
   padding-top: 1.5px;
-  background-image: linear-gradient(to left, white, white);
+  background-image: linear-gradient(to left, #1c6fc2, #35a0e7);
   text-align: center;
   border-radius: 40px;
 }
