@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/style_Thongke.css">
-    <title>Thống kê theo loại sản phẩm</title>
+    <title>Thống kê</title>
 </head>
 <body>
     <head>
@@ -39,8 +39,8 @@
             <li><a href="productAdmin.html">Sản phẩm</a></li>
             <li><a href="orderAdmin.html">Đơn hàng</a></li>
             <li><a href="userAdmin.html">Người dùng</a></li>
-            <li><a class="active">Thống Kê Sản Phẩm</a></li>
-            <li><a href="thongKeKHAdmin.html">Thống Kê Khách Hàng</a></li>
+            <li><a href="thongKeAdmin.html">Thống Kê Sản Phẩm</a></li>
+            <li><a class="active">Thống Kê Khách Hàng</a></li>
         </ul>
     </aside>
     <section id="main">
@@ -49,12 +49,12 @@
         <!--product list-->
         <div class="filter">
             <!--chon filter-->
-            <span><input type="radio" name="chon" value="ten" id="ten" onclick="checkTen()" >Theo tên sản phẩm</span>
-            <span><input type="radio" name="chon" value="loai" id="loai" onclick="checkLoai()" checked>Theo loại sản phẩm</span>
+            <span><input type="radio" name="chon" value="ten" id="ten" onclick="checkTen()" checked>Theo tên sản phẩm</span>
+            <span><input type="radio" name="chon" value="loai" id="loai" onclick="checkLoai()">Theo loại sản phẩm</span>
             <!--thong ke theo ten sp-->
-            <input type="text" name="tenSp" id="tenSp" value="KIDS BIKE"style="display:none">
+            <input type="text" name="tenSp" id="tenSp" placeholder="Tên sản phẩm">
             <!--thong ke theo loai san pham-->
-            <select name="loaiSp" id="loaiSp" style="display:block">
+            <select name="loaiSp" id="loaiSp">
                 <option value="kids">KIDS</option>
                 <option value="moutain">MOUTAIN</option>
             </select>
@@ -71,34 +71,52 @@
             <!--noi dung tieu de-->
             <tr class="title">
                 <th>Mã đơn hàng</th>
-                <th>Sản phẩm</th>
-                <th>Giá</th>
-                <th>Số Lượng Đã Bán</th>
+                <th>Tên Khách Hàng</th>
+                <th>Địa chỉ</th>
+                <th>Số Sản Phẩm Đã Mua</th>
             </tr>
             <!--noi dung cac san pham-->
             <tr class="product">
                 <td><a href="xemSanPhamMua.html">#1</a></td>
-                <td>GIANT ESCAPE 2 CITY 2017</td>
-                <td>16.490.000đ</td>
+                <td>Nguyễn Ân</td>
+                <td>22/22 Dương Bá Trạc Quận 8 tpHCM</td>
                 <td>2</td>
             </tr>
             <tr class="product">
-                <td><a href="xemSanPhamMua.html">#2</a></td>
-                <td>GIANT ESCAPE 2 CITY 2017</td>
-                <td>16.490.000đ</td>
-                <td>1</td>
+                <td><a href="xemSanPhamMua.html">#1</a></td>
+                <td>Thanh Điền</td>
+                <td>22/22 Dương Bá Trạc Quận 8 tpHCM</td>
+                <td>2</td>
             </tr>
             <tr class="product">
-                <td><a href="xemSanPhamMua.html">#3</a></td>
-                <td>GIANT ESCAPE 2 CITY 2017</td>
-                <td>16.490.000đ</td>
-                <td>3</td>
+                <td><a href="xemSanPhamMua.html">#1</a></td>
+                <td>Trọng Hiếu</td>
+                <td>22/22 Dương Bá Trạc Quận 8 tpHCM</td>
+                <td>2</td>
             </tr>
-            <tr class="product sum">
+            <tr class="product">
+                <td><a href="xemSanPhamMua.html">#1</a></td>
+                <td>Thanh</td>
+                <td>22/22 Dương Bá Trạc Quận 8 tpHCM</td>
+                <td>2</td>
+            </tr>
+            <tr class="product">
+                <td><a href="xemSanPhamMua.html">#1</a></td>
+                <td>Ngọc Hân</td>
+                <td>22/22 Dương Bá Trạc Quận 8 tpHCM</td>
+                <td>2</td>
+            </tr>
+            <!-- <tr class="product sum">
                 <td colspan="5" class="tong">Tổng</td>
                 <td>6</td>
-            </tr>
+            </tr> -->
         </table>
+        <div class="pagination">
+            <a href="thongKeKHAdmin.html">&lt;</a>
+            <a href="thongKeKHAdmin.html">1</a>
+            <a href="thongKeKHAdmin2.html" class="active">2</a>
+            <a href="thongKeKHAdmin2.html">&gt;</a>
+        </div>
     </section>
     <script>
         // js cua phan aside menu
@@ -114,22 +132,20 @@
   				document.getElementById("openNav").style.display = "inline-block";
 			}
 
+            ten = document.getElementById("ten");
+            loai = document.getElementById("loai");
+            tenSp = document.getElementById("tenSp");
+            loaiSp = document.getElementById("loaiSp");
             function checkTen(){
-                ten = document.getElementById("ten");
-                tenSp = document.getElementById("tenSp");
-                loaiSp = document.getElementById("loaiSp");
                 tenSp.style.display="block";
                 loaiSp.style.display="none";
             }
 
             function checkLoai(){
-                loai = document.getElementById("loai");
-                tenSp = document.getElementById("tenSp");
-                loaiSp = document.getElementById("loaiSp");
                 tenSp.style.display="none";
                 loaiSp.style.display="block";
             }
-            
+
             function move(){
                 if(ten.checked == true && tenSp.value==''){
                     alert("Vui lòng nhập tên sản phẩm");
@@ -141,7 +157,7 @@
                     window.location.href ="thongKeLoai.html";
                 }
             }
-
+            
     </script>
 </main>
 </body>
